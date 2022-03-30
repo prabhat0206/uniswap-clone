@@ -86,7 +86,7 @@ export const CryptProvider = ({ children }: any) => {
         } catch (err) {}
       })();
     } catch (err) {}
-  }, [isLoading]);
+  }, [isLoading, currentAccount, currentBalance]);
 
   React.useEffect(() => {
     const checkCurrentBalance = () => {
@@ -104,7 +104,7 @@ export const CryptProvider = ({ children }: any) => {
       }
     };
     checkCurrentBalance();
-  }, [currentAccount]);
+  }, [currentAccount, isLoading]);
 
   React.useEffect(() => {
     if (!currentAccount) return;
